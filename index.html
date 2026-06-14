@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lisbon Bridge - Snapseed Look</title>
+    <title>PixelPortra - Free 1-Click Retro Look for Pixel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom image slider styles */
@@ -59,7 +59,7 @@
     <!-- Header / Navbar -->
     <header class="border-b border-stone-800 bg-stone-950/60 backdrop-blur sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <span class="font-mono text-sm tracking-widest text-teal-400 uppercase font-bold">HANS.FILTERS</span>
+            <span class="font-sans text-sm tracking-wide text-teal-400 font-bold">Free 1-Click Retro Look for Pixel</span>
             <a href="#get-look" class="bg-teal-500 hover:bg-teal-400 text-stone-950 text-xs uppercase tracking-wider font-semibold py-2 px-4 rounded-full transition-all duration-300">
                 Get Look
             </a>
@@ -75,7 +75,7 @@
                 Snapseed Presets
             </span>
             <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">
-                Lisbon Warmth <span class="text-teal-400">Google Pixel Filter</span>
+                PixelPortra <span class="text-teal-400">Google Pixel Filter</span>
             </h1>
             <p class="text-stone-400 text-lg leading-relaxed">
                 Bring out the timeless charm of retro film in your travel photography. This filter is specifically tuned for the unique, punchy color science of <strong>Google Pixel</strong> photos—smoothing out harsh digital contrast and replacing it with organic warmth, cinematic vignettes, and classic analog grain. Works instantly via the free <strong>Snapseed</strong> app.
@@ -152,80 +152,39 @@
 
         <!-- Sample Gallery Section -->
         <div class="max-w-4xl mx-auto mb-20">
-            <h2 class="text-center text-xs uppercase tracking-widest text-stone-500 mb-8">Community Sample Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <h2 class="text-center text-xs uppercase tracking-widest text-stone-500 mb-8">Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Gallery Item 1 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_leica.jpg" alt="Leica Q3 Camera Gear" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">Gear Shot</span>
-                        <h4 class="text-white font-bold text-base mb-1">Leica Q3 Close-up</h4>
-                        <p class="text-stone-400 text-xs">Rich details and deep contrast reflecting real-world analog color profiles.</p>
-                    </div>
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_leica.jpg')">
+                    <img src="media/gallery_leica.jpg" alt="Leica Q3 Camera Gear" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
-
                 <!-- Gallery Item 2 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_retro.jpg" alt="80s Retro Tracksuits" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">80s Vibe</span>
-                        <h4 class="text-white font-bold text-base mb-1">Retro Match</h4>
-                        <p class="text-stone-400 text-xs">A bold, colorful test with tracksuits showing off warmth and saturation balance.</p>
-                    </div>
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_retro.jpg')">
+                    <img src="media/gallery_retro.jpg" alt="80s Retro Tracksuits" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_member.jpg" alt="Smiling Member in Clubhouse" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">Portrait / Interior</span>
-                        <h4 class="text-white font-bold text-base mb-1">Clubhouse Member</h4>
-                        <p class="text-stone-400 text-xs">Beautiful warm skin tones and rich wooden ceiling textures inside the surf club.</p>
-                    </div>
+                <!-- Gallery Item 3 (v2 Image 1) -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg')">
+                    <img src="media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Gallery Item 4 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_surf.jpg" alt="Surfer Smile Endless Surf" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">Outdoor / Water</span>
-                        <h4 class="text-white font-bold text-base mb-1">Endless Surf Wave Pool</h4>
-                        <p class="text-stone-400 text-xs">Handling vivid blue water and natural skin tones perfectly under sunlight.</p>
-                    </div>
+                <!-- Gallery Item 4 (v2 Image 2) -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg')">
+                    <img src="media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
-
-                <!-- Gallery Item 5 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_beach.jpg" alt="Surfer with Odysea Surfboard on Beach" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">Beach / Landscape</span>
-                        <h4 class="text-white font-bold text-base mb-1">Odysea Surf Session</h4>
-                        <p class="text-stone-400 text-xs">A stunning wide coastal shot emphasizing soft horizon hues and warm sand contrast.</p>
-                    </div>
+                <!-- Gallery Item 5 (v2 Image 3) -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg')">
+                    <img src="media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
-
-                <!-- Gallery Item 6 -->
-                <div class="bg-stone-950 border border-stone-800/80 rounded-2xl overflow-hidden group hover:border-teal-500/30 transition-all duration-300">
-                    <div class="aspect-[4/3] w-full overflow-hidden">
-                        <img src="media/gallery_sunset.jpg" alt="Endless Surf Wave Pool Sunset" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider block mb-1">Sunset / Golden Hour</span>
-                        <h4 class="text-white font-bold text-base mb-1">Golden Hour Wave</h4>
-                        <p class="text-stone-400 text-xs">Stunning pink clouds and soft pastel skies over the curving pool architecture.</p>
-                    </div>
+                <!-- Gallery Item 6 (v2 Image 4) -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg')">
+                    <img src="media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                </div>
+                <!-- Gallery Item 7 -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_beach.jpg')">
+                    <img src="media/gallery_beach.jpg" alt="Surfer on Beach" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                </div>
+                <!-- Gallery Item 8 -->
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_sunset.jpg')">
+                    <img src="media/gallery_sunset.jpg" alt="Golden Hour Wave" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                 </div>
             </div>
         </div>
@@ -234,13 +193,27 @@
 
     <!-- Footer -->
     <footer class="border-t border-stone-800 bg-stone-950 py-8 text-center text-xs text-stone-600">
-        <p class="mb-2">© 2026 Hans Filters. Built for creative mobile creators.</p>
+        <p class="mb-2">© 2026 PixelPortra. Built for creative mobile creators.</p>
         <div class="inline-flex items-center gap-1.5 bg-stone-900 border border-stone-800/80 px-2.5 py-1 rounded-full text-[10px] text-stone-400 font-mono">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>Views:</span>
             <img src="https://profile-counter.glitch.me/michikarg-ai-pixel-retro-filter/count.svg" alt="Visitor Counter" class="h-3.5 inline">
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-teal-400 transition-colors duration-200 focus:outline-none" aria-label="Close Lightbox">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <!-- Lightbox Image Wrapper -->
+        <div class="max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Full size gallery image" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-stone-800/50">
+        </div>
+    </div>
 
     <!-- Interactive Slider Logic -->
     <script>
@@ -294,6 +267,44 @@
             if (!isResizing) return;
             if (e.touches[0]) {
                 setSliderPosition(e.touches[0].clientX);
+            }
+        });
+
+        // Lightbox Functions
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            // Force reflow for transitions
+            void lightbox.offsetWidth;
+            lightbox.classList.remove('opacity-0');
+            lightbox.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden'; // Disable page scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            document.body.style.overflow = ''; // Re-enable page scrolling
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+            }, 300);
+        }
+
+        // Close on clicking backdrop
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close on escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
             }
         });
     </script>
