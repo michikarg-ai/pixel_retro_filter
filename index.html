@@ -4,7 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelPortra - Free 1-Click Retro Look for Pixel</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        film: {
+                            brass: '#C5A87F',
+                            green: '#00BD33',
+                            violet: '#7C3AED',
+                            dark: '#0C0C0C',
+                            charcoal: '#181818',
+                            border: '#2A2A2A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         /* Custom image slider styles */
         .slider-container {
@@ -30,187 +57,280 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 4px;
-            background: white;
+            width: 3px;
+            background: #C5A87F;
             z-index: 20;
             cursor: ew-resize;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
         }
         .slider-button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: white;
+            width: 44px;
+            height: 44px;
+            background: #0C0C0C;
+            border: 2px solid #C5A87F;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             z-index: 30;
             pointer-events: none;
+            color: #C5A87F;
+        }
+
+        /* Film Grain Overlay */
+        .film-grain {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            width: 200%;
+            height: 200%;
+            background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E') repeat;
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        /* Retro Sprocket Strip decoration */
+        .sprockets::before {
+            content: '';
+            display: block;
+            height: 14px;
+            background-image: radial-gradient(circle, #0C0C0C 5px, transparent 6px);
+            background-size: 24px 24px;
+            background-position: center;
+            opacity: 0.15;
+            margin-bottom: 8px;
         }
     </style>
 </head>
-<body class="bg-stone-900 text-stone-100 min-h-screen font-sans antialiased selection:bg-teal-500 selection:text-stone-900">
+<body class="bg-film-dark text-stone-200 min-h-screen font-sans antialiased selection:bg-film-brass selection:text-film-dark relative">
+    
+    <!-- Grain overlay for authentic vintage texture -->
+    <div class="film-grain"></div>
 
     <!-- Header / Navbar -->
-    <header class="border-b border-stone-800 bg-stone-950/60 backdrop-blur sticky top-0 z-50">
+    <header class="border-b border-film-border bg-film-dark/90 backdrop-blur sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <span class="font-sans text-sm tracking-wide text-teal-400 font-bold">Free 1-Click Retro Look for Pixel</span>
-            <a href="#get-look" class="bg-teal-500 hover:bg-teal-400 text-stone-950 text-xs uppercase tracking-wider font-semibold py-2 px-4 rounded-full transition-all duration-300">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-film-green"></span>
+                <span class="font-mono text-xs uppercase tracking-wider text-film-brass font-bold">Free 1-Click Retro Look for Pixel</span>
+            </div>
+            <a href="#get-look" class="bg-film-brass hover:bg-film-brass/90 text-film-dark text-xs font-mono uppercase tracking-widest font-bold py-2 px-5 rounded transition-all duration-300 border border-film-brass/50">
                 Get Look
             </a>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20 relative">
         
+        <!-- Canister Accent Strip -->
+        <div class="absolute top-0 right-4 w-32 h-1.5 flex gap-1 opacity-70">
+            <div class="flex-1 bg-film-green"></div>
+            <div class="flex-1 bg-film-brass"></div>
+            <div class="flex-1 bg-film-violet"></div>
+        </div>
+
         <!-- Hero Section -->
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="inline-block bg-teal-950/50 border border-teal-800/60 text-teal-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                Snapseed Presets
-            </span>
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">
-                PixelPortra <span class="text-teal-400">Google Pixel Filter</span>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <!-- Film simulation styling badge mimicking Fuji PRO Neg. Hi -->
+            <div class="inline-flex items-center gap-1.5 bg-film-charcoal/80 border border-film-border px-3 py-1.5 rounded text-xs font-mono tracking-wider mb-6 shadow-lg">
+                <span class="text-film-brass font-bold">PRO</span>
+                <span class="text-stone-500">|</span>
+                <span class="text-stone-300 italic font-serif">Neg.</span>
+                <span class="text-stone-500">|</span>
+                <span class="bg-film-green text-film-dark font-bold px-1.5 py-0.5 rounded text-[10px]">Hi</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif text-white tracking-tight leading-none mb-6">
+                Pixel<span class="text-film-brass font-sans font-black italic">Portra</span>
             </h1>
-            <p class="text-stone-400 text-lg leading-relaxed">
+            <p class="text-stone-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
                 Free, 1-click retro film simulation for your Pixel Phone—smoothing out harsh digital contrast and replacing it with organic warmth, cinematic vignettes, and classic analog grain. Works instantly via the free <strong>Snapseed</strong> app.
             </p>
         </div>
 
         <!-- Before / After Interactive Slider -->
-        <div class="max-w-4xl mx-auto mb-20">
-            <h2 class="text-center text-xs uppercase tracking-widest text-stone-500 mb-6">Interactive Slider (Drag to Compare)</h2>
-            <div id="image-slider" class="slider-container aspect-[16/9] w-full rounded-2xl border border-stone-800 shadow-2xl bg-stone-950">
-                
-                <!-- Before Image (Left/Top) -->
-                <div id="before-wrapper" class="slider-img slider-before" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                    <img src="media/before.jpg" alt="Original Bridge Shot" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur text-stone-300 text-xs px-3 py-1.5 rounded-md uppercase font-semibold tracking-wider">Before</span>
-                </div>
+        <div class="max-w-4xl mx-auto mb-24">
+            <div class="flex items-center justify-between mb-4 px-2">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500">Format: 35mm Roll</span>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-film-brass font-bold">FUJI PRO NEG HI EMULATION</span>
+            </div>
+            
+            <!-- Vintage Frame styling -->
+            <div class="p-2 bg-film-charcoal rounded-3xl border border-film-border shadow-2xl">
+                <div id="image-slider" class="slider-container aspect-[16/9] w-full rounded-2xl overflow-hidden bg-film-dark">
+                    
+                    <!-- Before Image (Left/Top) -->
+                    <div id="before-wrapper" class="slider-img slider-before" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                        <img src="media/before.jpg" alt="Original Google Pixel Photo" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-film-dark/90 border border-film-border text-stone-400 font-mono text-[10px] px-2.5 py-1 rounded uppercase tracking-wider">Pixel HDR (Digital)</span>
+                    </div>
 
-                <!-- After Image (Right/Bottom) -->
-                <div class="slider-img slider-after">
-                    <img src="media/after.jpg" alt="Edited Warm Bridge Shot" class="w-full h-full object-cover">
-                    <span class="absolute top-4 right-4 bg-teal-500 text-stone-950 text-xs px-3 py-1.5 rounded-md uppercase font-black tracking-wider">After Look</span>
-                </div>
+                    <!-- After Image (Right/Bottom) -->
+                    <div class="slider-img slider-after">
+                        <img src="media/after.jpg" alt="PixelPortra Film Simulation Edit" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-film-brass text-film-dark font-mono text-[10px] px-2.5 py-1 rounded uppercase font-bold tracking-wider">PixelPortra Applied</span>
+                    </div>
 
-                <!-- Control Handle -->
-                <div id="slider-handle" class="slider-handle" style="left: 50%;">
-                    <div class="slider-button">
-                        <svg class="w-5 h-5 text-stone-800" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                        </svg>
+                    <!-- Control Handle -->
+                    <div id="slider-handle" class="slider-handle" style="left: 50%;">
+                        <div class="slider-button">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
-
             </div>
+            <p class="text-center font-mono text-[10px] text-stone-600 mt-4 uppercase tracking-widest">Interactive drag comparison slider</p>
         </div>
 
         <!-- Sample Gallery Section -->
-        <div class="max-w-4xl mx-auto mb-20">
-            <h2 class="text-center text-xs uppercase tracking-widest text-stone-500 mb-8">Gallery</h2>
+        <div class="max-w-4xl mx-auto mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[1px] flex-1 bg-film-border"></div>
+                <h2 class="font-serif italic text-2xl text-white tracking-wide">Gallery</h2>
+                <div class="h-[1px] flex-1 bg-film-border"></div>
+            </div>
+            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Gallery Item 1 -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_leica.jpg')">
-                    <img src="media/gallery_leica.jpg" alt="Leica Q3 Camera Gear" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/gallery_leica.jpg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/gallery_leica.jpg" alt="Leica Q3 Camera Gear" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 2 -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_retro.jpg')">
-                    <img src="media/gallery_retro.jpg" alt="80s Retro Tracksuits" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/gallery_retro.jpg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/gallery_retro.jpg" alt="80s Retro Tracksuits" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 3 (v2 Image 1) -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg')">
-                    <img src="media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/v2/11ceabe6-42f2-4fdb-ba0b-fb79fd17b682.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 4 (v2 Image 2) -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg')">
-                    <img src="media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/v2/2745818f-d262-426b-9aa0-3ddd3a000ef0.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 5 (v2 Image 3) -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg')">
-                    <img src="media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/v2/8758c9f8-1c3b-451b-a4a6-8484049469cc.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 6 (v2 Image 4) -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg')">
-                    <img src="media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/v2/fc458588-35b4-4ebc-b3f1-43f0f26745ff.jpeg" alt="Retro Google Pixel Edit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 7 -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_beach.jpg')">
-                    <img src="media/gallery_beach.jpg" alt="Surfer on Beach" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/gallery_beach.jpg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/gallery_beach.jpg" alt="Surfer on Beach" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
                 <!-- Gallery Item 8 -->
-                <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-950 border border-stone-800/80 cursor-pointer group hover:border-teal-500/30 transition-all duration-300" onclick="openLightbox('media/gallery_sunset.jpg')">
-                    <img src="media/gallery_sunset.jpg" alt="Golden Hour Wave" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-film-charcoal border border-film-border cursor-pointer group hover:border-film-brass transition-all duration-300 p-1" onclick="openLightbox('media/gallery_sunset.jpg')">
+                    <div class="w-full h-full overflow-hidden rounded">
+                        <img src="media/gallery_sunset.jpg" alt="Golden Hour Wave" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Look Breakdown & Recipe Card -->
         <div class="grid md:grid-cols-2 gap-8 items-stretch mb-20">
-            <div class="bg-stone-950 border border-stone-800/80 p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4">Behind the Look</h3>
-                    <p class="text-stone-400 mb-6 leading-relaxed">
+            
+            <!-- Behind the Look Card -->
+            <div class="bg-film-charcoal border border-film-border p-8 rounded-2xl flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-film-brass/40 transition-colors duration-300">
+                <!-- Canister side ribbon decoration -->
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-film-brass"></div>
+                
+                <div class="pl-2">
+                    <h3 class="text-2xl font-serif text-white mb-4">Behind the Look</h3>
+                    <p class="text-stone-400 mb-8 leading-relaxed font-light text-sm">
                         Google Pixel cameras are famous for their high-contrast, ultra-sharp, and cool HDR processing. This custom recipe is designed specifically to balance those characteristics: it shifts the signature cool Pixel blues toward a warm, retro amber, introduces a soft vignette to diffuse clinical sharpness, and adds a classic 35mm grain to simulate organic film structure.
                     </p>
                 </div>
-                <div class="grid grid-cols-3 gap-4 border-t border-stone-800/80 pt-6">
+                <div class="grid grid-cols-3 gap-4 border-t border-film-border pt-6 pl-2 font-mono">
                     <div>
-                        <span class="block text-xs text-stone-500 uppercase">Tone</span>
-                        <span class="text-sm font-semibold text-teal-400">Warm Amber</span>
+                        <span class="block text-[10px] text-stone-500 uppercase tracking-wider mb-1">Tone</span>
+                        <span class="text-xs font-bold text-film-brass">Warm Amber</span>
                     </div>
                     <div>
-                        <span class="block text-xs text-stone-500 uppercase">Vignette</span>
-                        <span class="text-sm font-semibold text-teal-400">Cinematic</span>
+                        <span class="block text-[10px] text-stone-500 uppercase tracking-wider mb-1">Vignette</span>
+                        <span class="text-xs font-bold text-film-brass">Cinematic</span>
                     </div>
                     <div>
-                        <span class="block text-xs text-stone-500 uppercase">Texture</span>
-                        <span class="text-sm font-semibold text-teal-400">35mm Grain</span>
+                        <span class="block text-[10px] text-stone-500 uppercase tracking-wider mb-1">Texture</span>
+                        <span class="text-xs font-bold text-film-brass">35mm Grain</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Get The Look Action -->
-            <div id="get-look" class="bg-gradient-to-br from-teal-950/40 to-stone-950 border border-teal-500/20 p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-                <h3 class="text-xl font-bold text-white mb-2">Scan & Apply in Snapseed</h3>
-                <p class="text-stone-400 text-sm mb-6 max-w-xs">Scan the QR code below with your mobile <strong>Snapseed App</strong> to apply this complete look to your own photo instantly. <br><span class="text-xs text-stone-500">(Not for Lightroom or other tools)</span></p>
+            <!-- Get The Look Action Recipe Card -->
+            <div id="get-look" class="bg-film-charcoal border border-film-border p-8 rounded-2xl flex flex-col items-center justify-center text-center shadow-xl relative overflow-hidden group hover:border-film-green/40 transition-colors duration-300">
+                <!-- Canister side ribbon decoration -->
+                <div class="absolute top-0 right-0 w-1.5 h-full bg-film-green"></div>
+                
+                <h3 class="text-2xl font-serif text-white mb-2">Apply in Snapseed</h3>
+                <p class="text-stone-400 text-xs mb-6 max-w-xs font-light">
+                    Scan the recipe QR code with your mobile device within the <strong>Snapseed App</strong> to import and use this look instantly.
+                </p>
                 
                 <!-- QR Image Display -->
-                <div class="bg-white p-3 rounded-xl mb-4 shadow-xl">
-                    <img src="media/qr.jpg" alt="Snapseed QR Code" class="w-48 h-48 object-cover object-bottom rounded">
+                <div class="bg-white p-4 rounded-xl mb-6 shadow-2xl border-2 border-film-brass/40 relative">
+                    <img src="media/qr.jpg" alt="Snapseed QR Code" class="w-44 h-44 object-cover object-bottom rounded">
+                    <!-- Retro corner brackets -->
+                    <div class="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-film-green"></div>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-film-green"></div>
+                    <div class="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-film-green"></div>
+                    <div class="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-film-green"></div>
                 </div>
                 
-                <span class="text-xs font-mono text-teal-400">QR CODE INCLUDES COMPLETE RECIPE</span>
+                <span class="text-[10px] font-mono text-film-green tracking-widest uppercase font-bold">1-Click Embedded Recipe Code</span>
             </div>
         </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-stone-800 bg-stone-950 py-8 text-center text-xs text-stone-600">
-        <p class="mb-2">© 2026 PixelPortra. Built for creative mobile creators.</p>
-        <div class="inline-flex items-center gap-1.5 bg-stone-900 border border-stone-800/80 px-2.5 py-1 rounded-full text-[10px] text-stone-400 font-mono">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <img src="https://visitor-badge.laobi.icu/badge?page_id=michikarg-ai-pixel-retro-filter&color=14b8a6" alt="Visitor Counter" class="h-4.5 inline rounded">
+    <footer class="border-t border-film-border bg-film-dark py-10 text-center text-xs text-stone-600 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="mb-4 font-mono text-[10px] uppercase tracking-widest text-stone-500">© 2026 PixelPortra. Built for creative mobile creators.</p>
+            <div class="inline-flex items-center gap-1.5 bg-film-charcoal border border-film-border px-3 py-1.5 rounded text-[10px] text-stone-400 font-mono shadow-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-film-green animate-pulse"></span>
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=michikarg-ai-pixel-retro-filter&color=14b8a6" alt="Visitor Counter" class="h-4 inline rounded">
+            </div>
         </div>
     </footer>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/98 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
         <!-- Close Button -->
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-teal-400 transition-colors duration-200 focus:outline-none" aria-label="Close Lightbox">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-stone-400 hover:text-film-brass transition-colors duration-200 focus:outline-none" aria-label="Close Lightbox">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </button>
         <!-- Lightbox Image Wrapper -->
         <div class="max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center">
-            <img id="lightbox-img" src="" alt="Full size gallery image" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-stone-800/50">
+            <img id="lightbox-img" src="" alt="Full size gallery image" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-film-border/60">
         </div>
     </div>
 
